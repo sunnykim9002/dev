@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-form">
-        <input type="text" placeholder="What is your name?">
-        <button>Login</button>
-        <div class="helpertext">이름이 너무 깁니다</div>
-        <script src="app.js"></script>
-    </div>
+    <form id="login-form">
+        <input 
+        type="text" 
+        placeholder="What is your name?" 
+        required 
+        maxlength="15"
+        >
+        <input type="submit" value="login" onclick="onLoginSubmit()">
+    </form>
+    <a href="https://www.naver.com">Go to Cours</a>
+
 </body>
 </html>
+<script src="app.js"></script>

@@ -1,17 +1,15 @@
-const loginForm = document.getElementById("login-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
-const helperText = loginForm.getElementsByClassName('helpertext');
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const link = document.querySelector("a");
 
-console.log(helperText)
-function onLoginBtnClick () {
-    const username = loginInput.value;
-    const helperText = loginForm.getElementsByClassName('helpertext');
-    if (username == "") {
-        alert("please write your name");
-    } else if (username.length > 10) {
-        helperText.classList.add("HelloClass"); 
-    }
+
+function handleLinkClick(e) {
+    e.preventDefault();
+    alert("click")
+}
+function onLoginSubmit(e) {
+    e.preventDefault();
+    loginForm.classList.add("hidden");
 }
 
-loginButton.addEventListener("click", onLoginBtnClick)
+loginForm.addEventListener("submit", onLoginSubmit);
