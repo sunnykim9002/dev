@@ -1,0 +1,56 @@
+const toDoForm =  document.getElementById("todo-form");
+const toDoInput =  toDoForm.querySelector("input");
+const toDoList =  document.getElementById("todo-list");
+const toDos = [];
+const TODOS_KEY = "todos"
+
+function saveToDos() {
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos))
+}
+
+function deleteTodo(event){
+    const li = event.target.parentElement;
+    li.remove();
+    toDos = toDos.filter(toDo =>  toDo.id !== parseInt(li.id))
+//localstorage 에는 오직 string만 
+
+}
+
+function paintToDo(newTodo) {
+    const li = document.createElement("li");
+    li.id = newTodo.id;
+    const span = document.createElement("span");
+    const button = document.createElement("button");
+    button.innerText = "X"
+    li.appendChild(span);
+    li.appendChild(button);
+    button.addEventListener("click", deleteTodo)
+    span.innerText = newTodo.text;
+    toDoList.appendChild(li);
+}
+
+
+function handleToDoSubmit(e) {
+    e.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    const newTodoObj = {
+        text : newTodo,
+        id: Date.now()
+    }
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
+    saveToDos();
+}
+
+toDoForm.addEventListener("submit", handleToDoSubmit);
+const savedtoDos = localStorage.getItem(TODOS_KEY);
+
+if (saveToDos !== null) {
+    const parsedToDos = JSON.parse(savedtoDos);
+    // toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo)
+}
+
+
+
