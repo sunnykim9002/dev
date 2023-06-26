@@ -13,7 +13,6 @@ function deleteTodo(event){
     li.remove();
     toDos = toDos.filter(toDo =>  toDo.id !== parseInt(li.id))
 //localstorage 에는 오직 string만 
-
 }
 
 function paintToDo(newTodo) {
