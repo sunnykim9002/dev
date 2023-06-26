@@ -21,3 +21,30 @@ function solution(num_list) {
     
         return [even, odd];
 }
+
+// 문자 반복 출력하기
+// repeat 활용 시 더 깔끔하게 가능함
+function solution(my_string, n) {
+    let array = [...my_string];
+    let answerArray = [];
+    let i = 0;
+    
+
+  for ( a =0; a<array.length; a++) {
+        while ( i < n ) {
+            answerArray.push(array[a])
+            i++;
+        } 
+      i = 0;
+
+    }
+
+    
+    return answerArray.join("");
+}
+
+// 편지
+function solution(message) {
+    var answer = [...message].length * 2;
+    return answer;
+}
