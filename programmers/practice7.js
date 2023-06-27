@@ -21,3 +21,15 @@ function solution(array, height) {
         }
         return answer
     }
+
+// 중복된 숫자 개수
+
+function solution(array, n) {
+    let answer = "0";
+    for(i=0; i<array.length; i++) {
+        if(array[i] == n) {
+            answer++
+        }
+    }
+    return Number(answer)
+}
