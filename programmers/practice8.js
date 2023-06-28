@@ -16,4 +16,27 @@ function solution(price) {
     return Math.floor(price);
 }
 
-// 자릿수 더하기
+// 문자열 안에 문자열
+function solution(str1, str2) {
+    return str1.includes(str2) ? 1 : 2
+}
+
+// 세균 증식
+function solution(n, t) {
+
+    return n * Math.pow(2,t);
+}
+
+// 대문자와 소문자
+function solution(my_string) {
+    let arr = [];
+
+for (let i = 0; i < my_string.length; i++) { 
+	if (my_string[i] === my_string[i].toUpperCase()) {
+		arr.push(my_string[i].toLowerCase()); 
+	} else {
+		arr.push(my_string[i].toUpperCase()); 
+	}
+    }
+    return arr.join("")
+}
