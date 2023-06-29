@@ -33,3 +33,13 @@ function solution(n, k) {
     }
     return amount1 + amount2 - discount;
 }
+
+//모음제거
+function solution(my_string) {
+    
+    const str = 'aeiou'
+    let newString = my_string.split('').filter((el)=>(!str.includes(el))).join('')
+    
+    return newString
+    
+}
