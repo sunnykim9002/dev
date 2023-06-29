@@ -19,3 +19,17 @@ function solution(angle) {
     }
     
 }
+
+// 양꼬치 
+function solution(n, k) {
+    // 양꼬치 금액
+    let amount1 = n * 12000;
+    let amount2 = k * 2000;
+    
+    //뺄 음료수 값
+    let discount = Math.floor(n / 10) * 2000;
+    if ( n < 10) {
+        discount = 0;
+    }
+    return amount1 + amount2 - discount;
+}
