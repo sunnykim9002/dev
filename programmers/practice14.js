@@ -18,3 +18,19 @@ function solution(my_string) {
     let set = new Set(stringArray)
     return [...set].join("")
 }
+
+// n의배수 
+function solution(n, numlist) {
+
+    let array = [];
+    for( let c of numlist ) if (c % n == 0)
+        array.push(c)
+    return array;
+}
+
+// n의 배수 다른 사람 풀이 
+function solution(n, numlist) {
+    return numlist.filter(num => num % n === 0);
+}
+
+
