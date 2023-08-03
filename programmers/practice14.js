@@ -33,4 +33,14 @@ function solution(n, numlist) {
     return numlist.filter(num => num % n === 0);
 }
 
+//암호 해독
+function solution(cipher, code) {
+    let array = [...cipher]
+    let answer = [];
+    for(i = 1; i<=array.length; i++) {
+        answer.push(array[(code *i)-1])
+
+    }
+    return answer.join("")
+}
 
