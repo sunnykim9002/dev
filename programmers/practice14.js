@@ -44,3 +44,28 @@ function solution(cipher, code) {
     return answer.join("")
 }
 
+// 없는 숫자 더하기
+function solution(numbers) {
+    let numAll = [];
+    for(i=0; i<10; i++)
+    {numAll.push(i)}
+    let arrayTotal = [...numAll, ...numbers]
+    let answer = [];
+    for(let c of arrayTotal) {
+        if(arrayTotal.indexOf(c) === arrayTotal.lastIndexOf(c)) {
+            answer.push(c)
+        }
+    }
+    return answer.reduce((a,b)=> a+b)
+}
+
+//없는 숫자 더하기 다른 사람 풀이
+function solution(numbers) {
+    let answer = 0;
+
+    for(let i = 0; i <= 9; i++) {
+        if(!numbers.includes(i)) answer += i;
+    }
+
+    return answer;
+}
