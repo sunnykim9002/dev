@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="numpad">
+        <div><span>1</span></div>
+        <div><span>2</span></div>
+        <div><span>3</span></div>
+        <div class="operator"><span>+</span></div>
+        <div><span>4</span></div>
+        <div><span>5</span></div>
+        <div><span>6</span></div>
+        <div class="operator"><span>-</span></div>
+        <div><span>7</span></div>
+        <div><span>8</span></div>
+        <div><span>9</span></div>
+        <div class="operator"><span>*</span></div>
+        <div><span>0</span></div>
+        <div class="allclear"><span>AC</span></div>
+        <div class="calc"><span>=</span></div>
+        <div class="operator"><span>/</span></div>
+    </div>
+</body>
+
+<style>
+    .numpad{
+    font-size: 2em;
+    font-weight: bold;
+}
+.numpad > div{
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: .75em;
+    box-shadow: 1px 3px 15px -8px rgba(0,0,0,0.5); /* 버튼 입체 그림자 효과 */
+    border: 3px solid rgba(240,240,240,.75);
+    background-color: #f4f4f4;
+    margin: 5px;
+    cursor: pointer;
+}
+.numpad > div:active{ /* 누른 버튼 입체감 토글 */
+    box-shadow: none;
+}
+.numpad > div > span{
+    position: absolute;
+    display: block;
+    /* 버튼 텍스트 가운데 정렬 */
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* 버튼 종류별 색상 */
+.numpad > div.operator{
+    background-color: #f0dbef;
+}
+.numpad > div.allclear{
+    background-color: #dbdef0;
+}
+.numpad > div.calc{
+    background-color: #d0dec9;
+}
+.numpad > div:nth-child(4n+1){/* 한 행에 4개씩 버튼 표시 */
+    clear: left;
+}
+.pane{
+    font-family: DotGothic16;
+    font-size: 2em;
+    width: 290px;
+    height: 2em;
+    padding: 0.25em;
+    margin-bottom: .5em;
+    box-sizing: border-box;
+    text-align: right;
+    border-radius: .5em;
+    letter-spacing: 3px;
+    background-color: #abbda7;
+    box-shadow: inset 2px 2px 3px 0px rgba(0,0,0,.25);
+}
+</style>
+</html>
